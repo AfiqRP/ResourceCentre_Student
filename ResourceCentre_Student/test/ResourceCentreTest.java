@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
 // C206 AY2022 SEM1 - Eclipse 21-09 JDK16
 public class ResourceCentreTest {
 	// prepare test data
@@ -162,29 +161,30 @@ public class ResourceCentreTest {
 		//fail("Not yet implemented");
 		// write your code here
 		//boundary
-		assertNotNull("test if there is valid Chromebook arraylist to loan from", chromebookList);
+				assertNotNull("test if there is valid Chromebook arraylist to loan from", chromebookList);
 				
-		ResourceCentre.addChromebook(chromebookList, cb1);
+				ResourceCentre.addChromebook(chromebookList, cb1);
 				
-		// normal
-		Boolean ok = ResourceCentre.doLoanChromebook(chromebookList, "CB0011", "8-8-2020" );
-		assertTrue("Test if an available item is ok to loan?", ok);
-		assertFalse(chromebookList.get(0).getIsAvailable());
-		assertEquals(chromebookList.get(0).getDueDate(),"8-8-2020");
-										
-		//error condition
-		ok = ResourceCentre.doLoanChromebook(chromebookList, "CB0011", "8-8-2020" );
-		assertFalse("Test if an same item is NOT ok to loan again?", ok);	
+				// normal
+				Boolean ok = ResourceCentre.doLoanChromebook(chromebookList, "CB0011", "8-8-2020" );
+				assertTrue("Test if an available item is ok to loan?", ok);
+				assertFalse(chromebookList.get(0).getIsAvailable());
+				assertEquals(chromebookList.get(0).getDueDate(),"8-8-2020");
 				
-		//error condition
-		ResourceCentre.addChromebook(chromebookList, cb2);	
-		cb2.setIsAvailable(false);
-		ok = ResourceCentre.doLoanChromebook(chromebookList, "CB0012", "8-8-2020" );
-		assertFalse("Test that un-available item is NOT ok to loan?", ok);
+						
+				//error condition
+				ok = ResourceCentre.doLoanChromebook(chromebookList, "CB0011", "8-8-2020" );
+				assertFalse("Test if an same item is NOT ok to loan again?", ok);	
 				
-		//error condition
-		ok = ResourceCentre.doLoanChromebook(chromebookList, "CB0013", "8-8-2020" );
-		assertFalse("Test that non-existing item is NOT ok to loan?", ok);
+				//error condition
+				ResourceCentre.addChromebook(chromebookList, cb2);	
+				cb2.setIsAvailable(false);
+				ok = ResourceCentre.doLoanChromebook(chromebookList, "CB0012", "8-8-2020" );
+				assertFalse("Test that un-available item is NOT ok to loan?", ok);
+				
+				//error condition
+				ok = ResourceCentre.doLoanChromebook(chromebookList, "CB0013", "8-8-2020" );
+				assertFalse("Test that non-existing item is NOT ok to loan?", ok);
 		
 	}
 	
