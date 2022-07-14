@@ -186,7 +186,7 @@ public class ResourceCentre {
 		// write your code here
 
 		String tag = Helper.readString("Enter asset tag > ");
-		String description = Helper.readString("Enter description > ");
+		String description = Helper.readString("Enter descriptions > ");
 		String os = Helper.readString("Enter operating system > ");
 		
 		Chromebook cb = new Chromebook(tag, description, os);

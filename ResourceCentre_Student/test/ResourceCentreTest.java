@@ -208,7 +208,7 @@ public class ResourceCentreTest {
 		assertTrue("Test if loaned out amcorder CC0012 is returned- true", isReturned);
 		//error
 		isReturned = ResourceCentre.doReturnCamcorder(camcorderList, "CC0013");
-		assertFalse("Test if non-existing amcorder CC0013 is returned - false?", isReturned);
+		assertFalse("Test if a non-existing amcorder CC0013 is returned - false?", isReturned);
 		
 	}
 	@Test
